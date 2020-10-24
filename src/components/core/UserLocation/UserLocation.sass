@@ -1,0 +1,17 @@
+.UserLocation
+  margin: 11px
+  cursor: pointer
+  height: 13px
+  width: 13px
+  text-align: center
+  transition: .3s
+  &.loading
+    animation: spin .6s infinite
+  &.error
+    color: #f00
+    
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)

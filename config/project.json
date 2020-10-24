@@ -1,0 +1,32 @@
+{
+  "appName": "WeatherApp",
+  "updateWeatherIntervalSecs": 200,
+  "weatherstack": {
+    "apiKey": "4624324f5cefbc4af77fd063568bf94d",
+    "baseUrl": "https://api.weatherstack.com/"
+  },
+  "initialCities": [
+    "Chongqing",
+    "Shanghai",
+    "Beijing",
+    "Delhi",
+    "Chengdu",
+    "Tianjin",
+    "Istanbul",
+    "Karachi",
+    "Guangzhou",
+    "Tokyo",
+    "Moscow",
+    "Shenzhen",
+    "Mumbai",
+    "São Paulo",
+    "Kinshasa"
+  ],
+  "namespaces": {
+    "notes": "notes",
+    "favourites": "favourites",
+    "weather": "weather",
+    "user": "user",
+    "city": "city"
+  }
+}

@@ -1,0 +1,128 @@
+body
+  margin: 0
+  padding: 0
+  font-family: "Kumbh Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-size: 13px
+  background: #fafafa
+
+@keyframes appear
+  from
+    opacity: 0
+    left: -10px
+
+  to
+    opacity: 1
+    left: 0px
+
+a
+  color: inherit
+  &:hover
+    text-decoration: none
+
+.Cards 
+  display: flex
+  flex-flow: wrap
+
+.Card
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  width: 140px
+  background: #FFF
+  border-radius: 6px
+  padding: 13px
+  margin: 10px
+  display: flex
+  flex-direction: column
+  h3
+    margin-top: 3px
+    color: #0c2e44
+    box-shadow: 0 1px #eee
+    padding-bottom: 7px
+    margin-bottom: 8px
+    font-size: 16px
+    line-height: initial
+    display: flex
+    margin-left: -7px
+
+*:focus
+  outline: none
+button.big
+  border-radius: 4px
+  padding: 4px 10px
+  background: #09F
+  color: #FFF
+  font-size: 16px
+  transition: .3s
+  &:hover
+    background: #0AF
+  i
+    width: 22px
+    margin-right: 7px
+    text-align: center
+
+
+.Page
+  margin-top: 60px
+  padding: 10px
+  width: calc(100% - 20px)
+  > div
+    max-width: 800px
+    margin: auto
+    display: flex
+    flex-direction: column
+.disabled 
+  background: #cacaca
+  cursor: not-allowed
+  > * 
+    pointer-events: none
+
+
+.Header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    background: #cac9c9
+    background: linear-gradient(#eeeeee, #eeeeeee8, transparent)
+    height: 68px
+    z-index: 1
+    display: flex
+
+.appName
+  font-size: 25px
+  margin: 23px 0 23px 15px
+  cursor: pointer
+
+
+@media screen and (max-width: 500px)
+  .Card
+    width: calc(50% - 32px) !important
+    padding: 6px
+    h3
+      font-size: 1em !important
+    b
+      font-size: 2em
+    .value
+      font-size: 10px !important
+    &.Notes
+      width: calc(100% - 32px) !important
+      h3
+        margin-left: 9px
+    
+  .City 
+    width: calc(50vw - 42px)
+  .time
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    .date
+      display: none
+
+@media screen and (max-width: 330px)
+  .Card
+    width: calc(50vw - 6px)
+    h3
+      font-size: .8em
+    &.Notes
+     width: calc(100% - 47px)
+    
+

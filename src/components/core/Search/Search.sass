@@ -1,0 +1,92 @@
+.Search 
+  display: flex
+  margin: 15px auto
+  flex-direction: column
+  margin-right: 20px
+  width: calc(100% - 44px)
+  max-width: 500px
+  background: #FFF
+  box-shadow: 0 3px 13px -9px
+  z-index: 3
+  border-radius: 9px
+  padding: 5px
+  float: right
+
+  &Container
+    width: 100%
+  &.on
+    position: fixed
+    right: 0
+  &.error
+    i.fa-search
+      color: #bf0000 !important
+    input
+      color: #5f0000 !important
+  .Input 
+    display: flex
+    width: 100%
+
+    input 
+      display: block
+      width: calc(100% + 52px)
+      left: -28px
+      padding: 9px 7px
+      border: transparent
+      background: transparent
+      padding-left: 30px
+      margin: 0 -1px 0 -28px
+      outline: none
+    i.fa-search 
+      margin: 10px 7px
+      transition: none !important
+
+
+    i.fa-compass 
+      margin: 10px
+      cursor: pointer
+
+  .Results
+    transition: .3s
+    box-shadow: 0 -1px transparent
+    max-height: calc(100vh - 82px)
+    overflow: auto
+    .Result 
+      padding: 7px 4px 7px 0
+      transition: .2s linear
+      border-radius: 4px
+      color: #555
+      cursor: pointer
+    &.hasResult 
+      padding-top: 5px
+      box-shadow: 0 -1px #dcdada
+    &:hover .Result 
+      color: #999
+    .Result:hover 
+      background: #ddd
+      color: #000 
+  &.loading i.fa-search
+    animation: spin .6s infinite
+    width: 19px
+    text-align: center
+    height: 19px
+    height: 0
+    width: 0
+    padding: 6px
+    color: #777
+    &:before 
+      content: "\f021"
+      margin: -7px
+      position: relative
+      top: -6px
+.backdrop 
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  position: fixed
+  display: none
+  z-index: 1
+  background: #E6E6E6C9
+  animation: appear .3s
+  &.on 
+    display: block

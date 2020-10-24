@@ -1,0 +1,46 @@
+.CityDetails
+  h1
+    display: flex
+    a
+      white-space: nowrap
+  .Fav
+    float: right
+  .description 
+    display: flex
+    font-size: 14px
+    margin: 4px 14px
+    img 
+      height: 27px
+      border-radius: 5px
+    a
+      padding-bottom: 10px
+      display: block
+      margin: 6px 10px
+
+  .time 
+    font-size: 16px
+    float: right
+    text-align: right
+    box-shadow: 1px 0 #ccc
+    margin-right: 3px
+    color: #333
+    font-weight: 500
+    white-space: nowrap
+    i 
+      margin: 7px 11px 0 7px
+  .country 
+    margin: 0 6px
+    color: #909090
+    font-weight: 400
+    width: 100%
+    font-size: 14px
+    text-overflow: ellipsis
+    overflow: hidden
+  &.loading
+    a, b
+      background: #e0e0e0 !important
+      color: transparent !important
+      border-radius: 6px !important
+    .Card * 
+      color: #FFF !important
+      background: none !important
