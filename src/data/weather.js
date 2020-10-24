@@ -13,7 +13,7 @@ export const useWeather = (city) => {
   const update = () =>
     Service.weatherInfo(city)
       .then(setData)
-      .catch(({ error }) => setData({ error }))
+
 
   useEffect(() => {
     if (!weatherDisk[city]) { update() }

@@ -1,5 +1,6 @@
 import { config } from "@utils"
-const request = (url) =>
+import { Disk } from "./disk"
+ const request = (url) =>
   fetch(url)
     .then(response => response.json())
 
@@ -10,4 +11,16 @@ const serialize = (obj) =>
 export const weatherStackRequest = (url, parameters = {}) =>
   request(
     config.weatherstack.baseUrl + url +
-    "?" + serialize({ access_key: config.weatherstack.apiKey, ...parameters }))
+    "?" + serialize({ access_key: localStorage.getItem("apiKey") || config.weatherstack.apiKey, ...parameters })
+  )
+    .then((response) => {
+      if (response.error) {
+        Disk.error = {
+          code: response.error.code,
+          key: localStorage.getItem("apiKey") || config.weatherstack.apiKey
+        }
+      } else {
+        delete Disk.error
+      }
+      return response
+    })

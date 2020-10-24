@@ -36,7 +36,7 @@
     font-size: 14px
     text-overflow: ellipsis
     overflow: hidden
-  &.loading
+  &.loading,&.error
     a, b
       background: #e0e0e0 !important
       color: transparent !important
@@ -44,3 +44,10 @@
     .Card * 
       color: #FFF !important
       background: none !important
+    .Weather, .Notes 
+      pointer-events: none;
+  &.error
+    a, b
+      background: #fcc !important
+    .Weather, .Notes 
+      opacity: .7;

@@ -1,9 +1,7 @@
 {
-  "main.css": "/main.37b6777d.css",
-  "main.js": "/main.37b6777d7a576e50679a.js",
-  "main.js.map": "/main.37b6777d7a576e50679a.js.map",
-  "vendors~main.js": "/vendors~main.37b6777d7a576e50679a.js",
-  "vendors~main.js.map": "/vendors~main.37b6777d7a576e50679a.js.map",
+  "main.css": "/main.8c674b0b.css",
+  "main.js": "/main.8c674b0b0683a903a2e0.js",
+  "vendors~main.js": "/vendors~main.8c674b0b0683a903a2e0.js",
   "404.html": "/404.html",
   "fonts/KumbhSans-Bold.ttf": "/fonts/KumbhSans-Bold.ttf",
   "fonts/KumbhSans-Regular.ttf": "/fonts/KumbhSans-Regular.ttf",
@@ -11,7 +9,5 @@
   "fonts/kumbhsans-regular-webfont.woff2": "/fonts/kumbhsans-regular-webfont.woff2",
   "index.html": "/index.html",
   "service-worker.js": "/service-worker.js",
-  "service-worker.js.map": "/service-worker.js.map",
-  "workbox-d9851aed.js": "/workbox-d9851aed.js",
-  "workbox-d9851aed.js.map": "/workbox-d9851aed.js.map"
+  "workbox-d9851aed.js": "/workbox-d9851aed.js"
 }
