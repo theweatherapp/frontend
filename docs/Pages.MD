@@ -23,4 +23,7 @@ Header has "Application Name that provides link to Home Page" and a "Search bar 
 - Updates weather information regularly.
 - Update interval can be specified in project config.
 - UI responds loading and error states
-![Home Page](./screenshots/pages/CityDetails.png)
+
+![City Details](./screenshots/pages/CityDetails.png)
+![City Details Loading](./screenshots/pages/CityDetailsLoading.png)
+![City Details Error](./screenshots/pages/CityDetailsError.png)
