@@ -1,4 +1,4 @@
-[Documentation Home](../README.MD)
+[Documentation Home](../README.md)
 
 ## Data Layer
 

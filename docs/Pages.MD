@@ -1,4 +1,4 @@
-[Documentation Home](../README.MD)
+[Documentation Home](../README.md)
 ## Shell
 
 App Shell consists of fixed header and dynamic page router.
