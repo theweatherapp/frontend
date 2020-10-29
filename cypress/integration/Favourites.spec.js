@@ -16,7 +16,7 @@ const getResultFavouriteIcon = (city) =>
 const getResult = (city) =>
   cy.get('.Search .Results .Result[item="' + city + '"]')
 
-context('Favourites', () => {
+context('Favourites Feature', () => {
   it('Loads Page', () => cy.visit(Cypress.config('url')))
 
   // https://on.cypress.io/interacting-with-elements

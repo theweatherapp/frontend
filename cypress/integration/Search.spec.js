@@ -2,7 +2,7 @@
 const config = require('../../config/project.json')
 
 const getCity = (city) => cy.get('.InitialCities .City[city="' + city + '"]')
-context('Search', () => {
+context('Search Feature', () => {
 
   it('Loads Page', () => {
     cy.visit(Cypress.config('url'))

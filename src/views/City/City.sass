@@ -6,7 +6,6 @@
   float: left
   border-radius: 6px
   cursor: pointer
-  box-shadow: 0px 3px 12px -7px #000
   h3 
     margin: 0 0 4px
     display: flex
@@ -16,7 +15,7 @@
       white-space: nowrap
       width: 100%
       text-overflow: ellipsis
-
+      color: #445
     .Fav
       float: right
       margin: -5px
@@ -24,7 +23,7 @@
   .icon 
     padding: 32px
     width: 0
-    background: #eee
+    background: #eee center/cover
     border-radius: 4px
 
   &Weather 
@@ -57,3 +56,6 @@
   &:hover .remove 
     opacity: .8
     color: #bd0000
+
+.City, .Card
+  box-shadow: 0 1px 47px -5px rgba(60, 64, 67, 0.3), 0 1px 4px 0px rgba(60, 64, 67, 0.15)

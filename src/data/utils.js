@@ -8,7 +8,7 @@ const serialize = (obj) =>
   Object.keys(obj)
     .map(i => i + "=" + encodeURIComponent(obj[i].toString())).join("&")
 
-export const weatherStackRequest = (url, parameters = {}) =>
+export const weatherStackRequest = window.wr = (url, parameters = {}) =>
   request(
     config.weatherstack.baseUrl + url +
     "?" + serialize({ access_key: localStorage.getItem("apiKey") || config.weatherstack.apiKey, ...parameters })

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import classnames from "classnames"
+import GaugeChart from "react-gauge-chart"
 import { Icon } from "@components"
 import "./Weather.sass"
 
@@ -12,6 +13,7 @@ export const Weather = ({ data }) => {
     wind_degree,
     pressure,
     visibility,
+    uv_index,
     weather_descriptions,
     weather_icons
   } = data || {}
@@ -46,6 +48,13 @@ export const Weather = ({ data }) => {
       <div className="precip Card">
         <h3><Icon icon="umbrella" /> Precipitation </h3>
         <div className="value"> <b>%{precip || 0}</b> </div>
+      </div>
+      <div className="uv_index Card">
+        <h3><Icon icon="umbrella" /> UV Index </h3>
+        <div className="value"> <GaugeChart id="gauge-chart2"
+          nrOfLevels={10}
+          percent={(uv_index - .5) / 10}
+        /> <b>{uv_index || 0}</b> </div>
       </div>
     </div>
   </div>
