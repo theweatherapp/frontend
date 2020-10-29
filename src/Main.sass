@@ -24,7 +24,6 @@ a
   flex-flow: wrap
 
 .Card
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
   width: 140px
   background: #FFF
   border-radius: 6px
@@ -34,30 +33,16 @@ a
   flex-direction: column
   h3
     margin-top: 3px
-    color: #0c2e44
-    box-shadow: 0 1px #eee
-    padding-bottom: 7px
-    margin-bottom: 8px
+    color: #345
+    margin-bottom: 4px
     font-size: 16px
     line-height: initial
     display: flex
-    margin-left: -7px
+    i
+      margin-left: -4px
 
 *:focus
   outline: none
-button.big
-  border-radius: 4px
-  padding: 4px 10px
-  background: #09F
-  color: #FFF
-  font-size: 16px
-  transition: .3s
-  &:hover
-    background: #0AF
-  i
-    width: 22px
-    margin-right: 7px
-    text-align: center
 
 
 .Page
@@ -77,52 +62,67 @@ button.big
 
 
 .Header
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    background: #cac9c9
-    background: linear-gradient(#eeeeee, #eeeeeee8, transparent)
-    height: 68px
-    z-index: 1
-    display: flex
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  background: #cac9c9
+  background: linear-gradient(#eeeeee, #eeeeeee8, transparent)
+  height: 68px
+  z-index: 1
+  display: flex
 
 .appName
   font-size: 25px
   margin: 23px 0 23px 15px
   cursor: pointer
 
-
+.Card .value, .City .temperature
+  color: #444 !important
 @media screen and (max-width: 500px)
-  .Card
-    width: calc(50% - 32px) !important
+  .Card, .City
+    width: calc(50% - 28px)!important
     padding: 6px
+    margin: 8px
     h3
-      font-size: 1em !important
+      font-size: 1.2em!important
+      padding-top: 3px
+      padding-bottom: 0
     b
       font-size: 2em
     .value
-      font-size: 10px !important
+      font-size: 20px!important
     &.Notes
-      width: calc(100% - 32px) !important
+      width: calc(100% - 28px) !important
       h3
         margin-left: 9px
     
   .City 
     width: calc(50vw - 42px)
+    .temperature
+      font-size: 35px
   .time
     white-space: nowrap
-    text-overflow: ellipsis
-    overflow: hidden
     .date
       display: none
 
 @media screen and (max-width: 330px)
-  .Card
-    width: calc(50vw - 6px)
+  .Card, .City
+    width: calc(50% - 20px) !important
+    padding: 4px
+    margin: 6px
+    .icon
+      padding: 16px
     h3
-      font-size: .8em
+      font-size: 13px !important
+      padding-bottom: 1px
+
     &.Notes
-     width: calc(100% - 47px)
-    
+      width: calc(100% - 20px) !important
+    .temperature
+      font-size: 23px
+      margin: 2px 0 0 8px
+      a
+        font-size: 18px
+        top: -9px
 

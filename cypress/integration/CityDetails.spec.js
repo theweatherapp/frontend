@@ -6,7 +6,7 @@ const city2 = config.initialCities[1]
 const getCity = (city) => cy.get('.InitialCities .City[city="' + city + '"]')
 const isValueNumber = (selector) => cy.get(selector).then(el =>
   expect(isFinite(el[0].innerText.replace('%', ""))).to.eq(true))
-context('HomePage', () => {
+context('City Details', () => {
   it('Loads Page', () => cy.visit(Cypress.config('url')))
 
   it('Has loaded city', () => {

@@ -62,5 +62,7 @@ typings/
 
 # distribution files
 .DS_Store
-
+cypress/screenshots
+cypress/results
 cypress/videos/*.mp4
+scripts/up.sh

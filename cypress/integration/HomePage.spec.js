@@ -5,7 +5,7 @@ const cityToAddFavourite = config.initialCities[2]
 const cityToRemove = config.initialCities[3]
 
 const getCity = (city) => cy.get('.InitialCities .City[city="' + city + '"]')
-context('HomePage', () => {
+context('Home Page', () => {
   it('Loads Page', () => {
     cy.visit(Cypress.config('url'))
     cy.get('.Search')
