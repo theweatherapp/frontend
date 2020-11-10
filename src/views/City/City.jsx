@@ -3,7 +3,7 @@ import { useWeather } from "@data"
 import { navigateTo } from "@utils"
 import "./City.sass"
 
-export const City = ({ name, icon }) => {
+export const City = ({ name, fav, remove }) => {
   let [weather] = useWeather(name)
   if (weather && weather.error) {
     weather = null
@@ -11,8 +11,9 @@ export const City = ({ name, icon }) => {
   const iconStyle = weather && { backgroundImage: "url(" + weather.weather_icons[0] + ")" }
   return <div className="City" city={name} onClick={navigateTo(name)}>
     <h3>
+      {fav}
       <a> {name} </a>
-      {icon}
+      {remove}
     </h3>
     {
       <div className="CityWeather">
@@ -20,5 +21,6 @@ export const City = ({ name, icon }) => {
         {weather && <div className="temperature"> {weather.temperature}<a>°C</a> </div>}
       </div>
     }
+
   </div>
 }

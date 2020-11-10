@@ -12,6 +12,7 @@ context('City Details', () => {
   it('Has loaded city', () => {
     getCity(city).click()
     cy.get('.CityDetails')
+    cy.get('.Fav')
   })
 
   it('Has Title', () => {

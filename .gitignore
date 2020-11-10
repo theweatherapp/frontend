@@ -66,3 +66,5 @@ cypress/screenshots
 cypress/results
 cypress/videos/*.mp4
 scripts/up.sh
+dist/*.css
+dist/*.js

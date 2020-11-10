@@ -1,4 +1,4 @@
-import React, { useState, Fragment, forwardRef } from "react"
+import React, { useState, useEffect, Fragment, forwardRef } from "react"
 import classNames from "classnames"
 import { Icon, UserLocation } from "@components"
 import { debounce } from "@utils"
@@ -31,17 +31,25 @@ export const Search = forwardRef(({ className, disabled, placeholder, search, re
   const [{ error, loading }, setLoading] = useState({ error: false, loading: false })
   const [isFocused, setFocused] = useState(false)
   // debounced API call 
+  useEffect(() => {
+    if (disabled) {
+      clearSearch()
+      setLoading({ error: false, loading: false })
+    } else {
+      setLoading({ error: false, loading: false })
+    }
+  }, [disabled])
   const debouncedSearch = debounce(searchQuery => {
     setLoading({ error: false, loading: true })
     return search(searchQuery)
       .then((data) => {
-        if (searchQuery === queryVar) {
+        if ((searchQuery === queryVar) && navigator.onLine) {
           isFocused && setResults(data)
           setLoading({ error: false, loading: false })
         }
       })
       .catch(() => {
-        if (searchQuery === queryVar) {
+        if ((searchQuery === queryVar) && navigator.onLine) {
           setResults([])
           setLoading({ error: true, loading: false })
         }
@@ -62,10 +70,8 @@ export const Search = forwardRef(({ className, disabled, placeholder, search, re
     } else {
       (value.trim().length > 2) && debouncedSearch(value.trim())
     }
-
   }
   const onKeyUp = ({ nativeEvent: { keyCode }, target }) => {
-
     if (keyCode === 27) {
       clearSearch()
       target.blur()

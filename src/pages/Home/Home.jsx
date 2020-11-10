@@ -25,7 +25,7 @@ export const Home = () => {
           Favourites.list
             .sort()
             .map((city) =>
-              <City key={city} name={city} icon={Favourites.icon[city]} />)
+              <City key={city} name={city} fav={Favourites.icon[city]} />)
         }
       </div>
     }
@@ -38,7 +38,8 @@ export const Home = () => {
             <City
               key={city}
               name={city}
-              icon={<Icon icon="times" className="remove" onClick={removeFromList(city)} />}
+              fav={Favourites.icon[city]}
+              remove={<Icon icon="times" className="remove" onClick={removeFromList(city)} />}
             />)
       }
     </div>
