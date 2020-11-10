@@ -1,4 +1,4 @@
-import { uniqueKeys } from "@utils"
+import { uniqueKeys, now } from "@utils"
 import { weatherStackRequest } from "./utils"
 import { cityDisk } from "./disk"
 
@@ -30,6 +30,7 @@ export const Service = {
           country,
           time: localtime_epoch + (new Date()).getTimezoneOffset() * 60
         }
+        weather.acquired = now()
         return weather
       })
 }

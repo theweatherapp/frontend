@@ -3,6 +3,12 @@ import { createBrowserHistory } from "history"
 
 export const config = require("../../config/project.json")
 
+/**
+ * @method now
+ * @description current timestamp
+ * @return {number}
+ */
+export const now = () => Math.round(Date.now() / 1000)
 
 /**
  * @typedef {(...args?: any[]) => void} Func

@@ -1,6 +1,7 @@
 {
   "appName": "WeatherApp",
   "updateWeatherIntervalSecs": 200,
+  "weatherInfoValidityTimeout": 3600,
   "weatherstack": {
     "apiKey": "1620f11c3543253aa474c9640425803e",
     "baseUrl": "https://api.weatherstack.com/"
