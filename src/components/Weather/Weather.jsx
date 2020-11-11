@@ -51,8 +51,9 @@ export const Weather = ({ data }) => {
       </div>
       <div className="uv_index Card">
         <h3><Icon icon="umbrella" /> UV Index </h3>
-        <div className="value"> <GaugeChart id="gauge-chart2"
+        <div className="value"> <GaugeChart id="uv_gauge"
           nrOfLevels={10}
+          animate={false}
           percent={(uv_index - .5) / 10}
         /> <b>{uv_index || 0}</b> </div>
       </div>
