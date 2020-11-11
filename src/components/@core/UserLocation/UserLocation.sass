@@ -1,13 +1,23 @@
 .UserLocation
-  margin: 11px
+  display: flex
   cursor: pointer
-  height: 13px
-  width: 13px
-  text-align: center
-  transition: .3s
-  &.loading
+  i 
+    margin: 11px
+    cursor: pointer
+    height: 13px
+    width: 13px
+    text-align: center
+    transition: .3s
+
+  .useLocation 
+    white-space: nowrap
+    line-height: 32px
+    cursor: pointer
+
+  &.loading i
     animation: spin .6s infinite
   &.error
+    i, .useLocation
     color: #f00
     
 @keyframes spin
@@ -15,3 +25,4 @@
     transform: rotate(0deg)
   to
     transform: rotate(360deg)
+

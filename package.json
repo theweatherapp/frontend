@@ -1,6 +1,6 @@
 {
   "name": "weather-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Weather App",
   "main": "index.js",
   "repository": "https://github.com/theweatherapp/weather-app",
@@ -22,7 +22,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-gauge-chart": "^0.2.5",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

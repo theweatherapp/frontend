@@ -24,10 +24,6 @@ export const CitySearch = () => {
         searchRef.current && searchRef.current.clear()
         results.length && navigate(results[0])
       })
-  const navigateToUserCity = () => {
-    searchRef.current && searchRef.current.clear()
-    navigate(userCity)
-  }
   const focus = () => setFocused(true)
   const focusOut = () => setFocused(false)
   const renderer = ((city) =>
@@ -36,6 +32,7 @@ export const CitySearch = () => {
       {city}
     </Fragment>
   )
+  const clearSearch = () => searchRef.current && searchRef.current.clear()
   const search = (query) => Service.searchCity(query).then((results) => results.sort())
   return <Search
     ref={searchRef}
@@ -45,7 +42,6 @@ export const CitySearch = () => {
     onSelect={navigate}
     disabled={!isOnline}
   >
-    {userCity && <a className="userCity" tabIndex={1} onClick={navigateToUserCity}> {userCity}</a>}
-    {isOnline && <UserLocation onLocation={onLocation} />}
+    {isOnline && <UserLocation onLocation={onLocation} current={userCity} clearSearch={clearSearch} />}
   </Search>
 }

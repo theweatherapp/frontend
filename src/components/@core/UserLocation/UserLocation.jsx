@@ -1,24 +1,31 @@
-import React, { useState } from "react"
-import { GeoLocation } from "./GeoLocation"
+import React from "react"
 import classNames from "classnames"
+import { toast as notify } from 'react-toastify'
 import { Icon } from "@components"
+import { navigateTo, useLoadingState } from "@utils"
+import { GeoLocation } from "./GeoLocation"
 import "./UserLocation.sass"
-export const UserLocation = ({ onLocation }) => {
-  const [{ loading, error }, setLoading] = useState({ loading: false, error: false })
+export const UserLocation = ({ onLocation, current }) => {
+  const [{ loading, error }, load] = useLoadingState(5000)
+  const requestLocation = (e) => {
+    e.stopPropagation()
+    e.preventDefault()
 
-  const requestLocation = () => {
-    setLoading({ loading: true, error: false })
-    GeoLocation.request()
-      .then((location) => {
-        onLocation(location)
-        setLoading({ loading: false, error: false })
-      })
-      .catch(e => setLoading({ loading: false, error: true }))
+    load(GeoLocation.request())
+      .then((location) =>
+        onLocation(location))
+      .catch(error =>
+        notify(error, { type: "error", position: "top-center" }))
   }
-  return <Icon
-    icon="compass"
-    className={classNames("UserLocation", { loading, error })}
-    onClick={requestLocation}
-    disabled={!GeoLocation.isAvailable}
-  />
+  return <div className={classNames("UserLocation", { loading, error })}>
+    {
+      current
+        ? <a className="userCity" tabIndex={1} onClick={navigateTo(current)}> {current}</a>
+        : <a className="useLocation" onClick={requestLocation} disabled={!GeoLocation.isAvailable}> Use Your Location</a>
+    }
+    <Icon
+      icon="compass" onClick={requestLocation}
+      disabled={!GeoLocation.isAvailable}
+    />
+  </div>
 }

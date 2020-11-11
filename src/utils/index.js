@@ -1,4 +1,4 @@
-import { useEffect, createElement } from "react"
+import { useEffect, useState, createElement } from "react"
 import { createBrowserHistory } from "history"
 
 export const config = require("../../config/project.json")
@@ -77,3 +77,31 @@ export const navigate = (city = "") => {
 export const withParamsDecorator = (Component) =>
   ({ match: { params } }) =>
     createElement(Component, params)
+
+export const useLoadingState = (resetErrorState) => {
+  const [{ loading, error }, setLoading] = useState({ loading: false, error: false })
+  const resetState = () => setLoading({ loading: false, error: false })
+  const load = (promise) => {
+    setLoading({ loading: true, error: false })
+    return promise.then((forwardResult) => {
+      resetState()
+      return forwardResult
+    }).catch((forwardError) => {
+      setLoading({ loading: false, error: true })
+      return Promise.reject(forwardError)
+    })
+  }
+
+  if (resetErrorState) {
+    useEffect(() => {
+      let removeErrorState
+      if (error) {
+        removeErrorState = setTimeout(() => {
+          error && resetState()
+        }, resetErrorState || 5000)
+      }
+      return () => clearTimeout(removeErrorState)
+    }, [error])
+  }
+  return [{ loading, error }, load, resetState]
+}

@@ -1,5 +1,7 @@
 import React from "react"
 import { Route, Router, Switch } from "react-router-dom"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import { Home, CityDetails } from "@pages"
 import { CitySearch } from "@components"
 import { config, useRedirect, navigate, navigateTo, history, withParamsDecorator } from "@utils"
@@ -15,7 +17,10 @@ export const Main = () => {
   return <Router history={history}>
 
     <div className="Header">
-      <div className="appName" onClick={navigateTo("")}>{config.appName}</div>
+      <div className="appName" onClick={navigateTo("")}>
+        <div className="appLogo" />
+        {config.appName}
+      </div>
       <CitySearch />
     </div>
     <ErrorView />
@@ -25,5 +30,6 @@ export const Main = () => {
         <Route path="/:city" component={withParamsDecorator(CityDetails)} />
       </Switch>
     </div>
+    <ToastContainer />
   </Router>
 }

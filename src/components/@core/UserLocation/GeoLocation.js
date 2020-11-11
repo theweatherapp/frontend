@@ -9,16 +9,16 @@ export const GeoLocation = {
     const onError = (error) => {
       switch (error.code) {
         case error.PERMISSION_DENIED:
-          reject("You should give permission to us to get your location.")
+          reject("You should give us permission to get your location.")
           break;
         case error.POSITION_UNAVAILABLE:
-          reject("Unfortunatelly, location information is unavailable.")
+          reject("Unfortunatelly, gps information is unavailable.")
           break;
         case error.TIMEOUT:
           reject("Unfortunatelly, location request timed out.")
           break;
         case error.UNKNOWN_ERROR:
-          reject("An unknown error occurred while getting your location.")
+          reject("Unknown error occurred while getting your location.")
           break;
       }
     }

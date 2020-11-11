@@ -76,10 +76,27 @@ a
   font-size: 25px
   margin: 23px 0 23px 15px
   cursor: pointer
-
+  display: flex
+  .appLogo
+    background: url(assets/logo.svg) center/cover
+    height: 28px
+    width: 28px
+    float: left
+    margin-right: 7px
 .Card .value, .City .temperature
   color: #444 !important
+
+.Toastify__toast 
+  border-radius: 7px
+  &--error 
+    background: #ff796b
+
 @media screen and (max-width: 500px)
+  .appName
+    width: 32px
+    display: block
+    overflow: hidden
+    height: 30px
   .Card, .City
     width: calc(50% - 28px)!important
     padding: 6px
@@ -107,6 +124,13 @@ a
       display: none
 
 @media screen and (max-width: 330px)
+  .UserLocation .useLocation
+    font-size: 10px
+    margin-right: -4px
+  .Search
+    margin-right: 10px
+    width: calc(100% - 26px)
+    padding: 5px 2px
   .Card, .City
     width: calc(50% - 20px) !important
     padding: 4px

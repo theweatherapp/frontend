@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment, forwardRef } from "react"
 import classNames from "classnames"
 import { Icon, UserLocation } from "@components"
-import { debounce } from "@utils"
+import { debounce, useLoadingState } from "@utils"
 import "./Search.sass"
 
 /**
@@ -28,38 +28,33 @@ let queryVar
 export const Search = forwardRef(({ className, disabled, placeholder, search, renderer, children, onSelect }, ref) => {
   const [results, setResults] = useState([])
   const [query, setQuery] = useState("")
-  const [{ error, loading }, setLoading] = useState({ error: false, loading: false })
+  const [{ error, loading }, startLoading, resetLoading] = useLoadingState()
   const [isFocused, setFocused] = useState(false)
   // debounced API call 
   useEffect(() => {
     if (disabled) {
       clearSearch()
-      setLoading({ error: false, loading: false })
-    } else {
-      setLoading({ error: false, loading: false })
     }
+    resetLoading()
   }, [disabled])
-  const debouncedSearch = debounce(searchQuery => {
-    setLoading({ error: false, loading: true })
-    return search(searchQuery)
+  const debouncedSearch = debounce(searchQuery =>
+    startLoading(search(searchQuery))
       .then((data) => {
         if ((searchQuery === queryVar) && navigator.onLine) {
           isFocused && setResults(data)
-          setLoading({ error: false, loading: false })
         }
       })
       .catch(() => {
         if ((searchQuery === queryVar) && navigator.onLine) {
           setResults([])
-          setLoading({ error: true, loading: false })
         }
       })
-  }, 200)
+    , 200)
 
   const clearSearch = () => {
     (query !== "") && setQuery("")
     setResults([])
-    setLoading({ error: false, loading: false })
+    resetLoading()
     focusOut()
   }
   ref.current = { clear: clearSearch }
