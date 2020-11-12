@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import  { useState, useEffect } from "react"
 import classnames from "classnames"
 import GaugeChart from "react-gauge-chart"
 import { Icon } from "@components"

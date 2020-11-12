@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { timeString } from "@utils"
 import { Icon } from "@components"
 

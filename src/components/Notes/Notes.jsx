@@ -1,4 +1,3 @@
-import React from "react"
 import { useNoteDisk } from "@data"
 import { config } from "@utils"
 import "./Notes.sass"

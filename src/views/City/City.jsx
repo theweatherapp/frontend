@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import  { useState, useEffect } from "react"
 import { useWeather } from "@data"
 import { navigateTo } from "@utils"
 import "./City.sass"

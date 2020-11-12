@@ -1,4 +1,3 @@
-import React from "react"
 import classNames from "classnames"
 import { toast as notify } from 'react-toastify'
 import { Icon } from "@components"

@@ -1,4 +1,3 @@
-import React from "react"
 export const WeatherError = ({ city }) =>
   <div className="WeatherError">
     <h1>An error occured</h1>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import { Fragment } from "react"
 import { useDisk } from "@data"
 import "./ErrorView.sass"
 const errorMessages = {

@@ -1,4 +1,3 @@
-import React from "react"
 import { config, uniqueKeys } from "@utils"
 import { useDisk, Disk } from "@data"
 import { AFavouritesManager, Icon } from "@components"

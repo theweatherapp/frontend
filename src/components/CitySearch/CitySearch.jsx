@@ -1,4 +1,4 @@
-import React, { useState, useRef, Fragment } from "react"
+import { useState, useRef, Fragment } from "react"
 import classNames from "classnames"
 import useOnline from "@rooks/use-online"
 import { UserLocation, AFavouritesManager, Search } from "@components"

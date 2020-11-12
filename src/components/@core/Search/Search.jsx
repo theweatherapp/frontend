@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment, forwardRef } from "react"
+import { useState, useEffect, Fragment, forwardRef } from "react"
 import classNames from "classnames"
 import { Icon, UserLocation } from "@components"
 import { debounce, useLoadingState } from "@utils"

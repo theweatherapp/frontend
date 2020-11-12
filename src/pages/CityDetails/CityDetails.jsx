@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import classNames from "classnames"
 import { Weather, Notes, Icon, AFavouritesManager, Time } from "@components"
 import { Disk, useWeather, cityDisk, weatherDisk } from "@data"
